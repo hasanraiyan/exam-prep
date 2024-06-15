@@ -3,6 +3,14 @@ let sideData = document.getElementById("side-data");
 let mainData = document.getElementById("main-data");
 let chapterName = document.querySelectorAll(".chapter-name");
 
+
+let data;
+fetch(`./data/data.json`).then(response=>{
+  return response.json();
+}).then(file => {
+  data=file; // Handle the JSON data
+});
+
 activeNav.forEach((e) => {
   e.addEventListener("click", (event) => {
     activeNav.forEach((navElement) => {
@@ -11,8 +19,10 @@ activeNav.forEach((e) => {
       }
     });
     e.classList.add("nav-active");
-    sideData.innerHTML = physicsDataHTML;
-    mainData.innerHTML = `<p>main data: ${e.innerHTML}</p>`;
+    console.log("clicked");
+
+    sideData.innerHTML = ""
+    mainData.innerHTML = `<p>main data:</p>`;
     console.log(e);
 
   });
@@ -24,8 +34,6 @@ chapterName.forEach((chapter)=>{
   chapter.addEventListener("click", (e)=>{
     chapterName.forEach((e)=>{
       e.nextElementSibling.classList.remove("chapter-active");
-      // border-bottom: 2px solid yellow;
-      // conv this to js
       e.style.borderBottom = "none";
       
     });
