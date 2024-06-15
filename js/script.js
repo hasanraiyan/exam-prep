@@ -18,13 +18,19 @@ activeNav.forEach((e) => {
   });
 });
 
+
 chapterName.forEach((chapter)=>{
 
   chapter.addEventListener("click", (e)=>{
     chapterName.forEach((e)=>{
       e.nextElementSibling.classList.remove("chapter-active");
+      // border-bottom: 2px solid yellow;
+      // conv this to js
+      e.style.borderBottom = "none";
+      
     });
     console.log(chapter.nextElementSibling);
+    chapter.style.borderBottom = "2px solid #37393b";
     chapter.nextElementSibling.classList.add("chapter-active");
 
   });
