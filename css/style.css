@@ -1,258 +1,27 @@
 :root {
-  /* Primary Color - Main color used throughout the website */
-  --primary-color: #010812;
-  --secondary-color: #424445;
-  /* Accent Color - Used for highlighting or emphasis */
-  --accent-color: #ffc107;
-  /* Text Color - Color of text throughout the website */
-  --text-color: #fff;
-  /* Background Color - Overall background color of the website */
-  --background-color: #37393b;
-  /* Footer Color - Background color of the footer */
-  --footer-color: #343a40; /* Dark Grey */
 }
 
-*::-webkit-scrollbar {
-  display: none;
-}
 .body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  overflow-y: hidden;
   flex-direction: column;
-
   .header {
-    /* border: 1px solid var(--secondary-color); */
-    /* box-shadow: -15px 20px 5px #000000; */
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      background-color: var(--primary-color);
-      padding: 0 4%;
-      align-items: center;
-      box-shadow: #343a40;
-      /* border: 1px solid var(--accent-color); */
-
-      .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .logo-icon {
-          margin-left: 3%;
-          display: flex;
-
-          img {
-            border-radius: 50%;
-            width: 40px;
-          }
-        }
-
-        .logo-name {
-          white-space: nowrap;
-          margin-left: 1rem;
-          font-size: 2rem;
-          font-weight: 700;
-          color: rgb(176, 69, 69);
-          font-family: cursive;
-        }
-      }
-
-      .nav ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-decoration: none;
-        list-style: none;
-        gap: 0.1rem;
-
-        li a,
-        li:active a {
-          display: flex;
-          justify-content: center;
-          margin: 0 1rem;
-          padding: 0.5rem 1rem;
-          color: var(--text-color);
-          text-decoration: none;
-          border-radius: 5px;
-          white-space: nowrap;
-          cursor: pointer;
-        }
-
-        li a:hover {
-          background-color: hwb(0 50% 50% / 0.833);
-          border-radius: 5px;
-        }
-
-        .nav-active a {
-          background-color: var(--background-color);
-          border-radius: 5px;
-        }
-      }
-      .profile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-          width: 40px;
-        }
-      }
-    }
+    width: 100%;
+    min-height: 3rem;
+    background-color: red;
   }
   .main {
-    background-color: var(--background-color);
-    height: 100%;
     flex-grow: 1;
-    display: flex;
-    .sidebar {
-      background-color: var(--background-color);
-      width: 25%;
-      transition: all 0.5s ease;
-      padding: 0.3rem;
-      margin-bottom: 2rem;
-      overflow-y: auto;
-      height: 100vh;
-      .sidebar-content {
-        margin-bottom: 5rem;
-        padding: 0.5rem;
-
-        font-family: sans-serif;
-        .chapter-names {
-          cursor: pointer;
-          background-color: var(--secondary-color);
-          color: var(--text-color);
-          padding: 0.5rem;
-          padding-left: 1rem;
-          border-radius: 0.8rem;
-          margin: 0;
-          margin-bottom: 1rem;
-          transition: all 0.5s ease;
-          border-bottom: 1px solid red;
-
-          .chapter-name {
-            display: flex;
-            justify-content: space-between;
-            padding-right: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-
-            i {
-              display: flex;
-              align-items: center;
-              transform: rotate(180deg);
-              transition: all 0.5s ease;
-              font-size: 1rem;
-            }
-
-          }
-          .chapter-details {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.5s ease-in;
-
-            .chapter-topics {
-              margin: 0;
-              padding: 0.3rem;
-              border-radius: 5px;
-              font-size: 1.2rem;
-              margin-left: 1rem;
-              display: none;
-              margin-top: 0.7rem;
-            }
-            .chapter-topics:hover {
-              background-color: var(--primary-color);
-            }
-          }
-          .chapter-details.chapter-active {
-              display: block;
-          }
-        }
-      }
-      .sidebar::-webkit-scrollbar {
-        display: none;
-      }
-    }
-    scrollbar-color: red;
-    scrollbar-width: 0;
-    .main-content {
-      background-color: yellow;
-      flex-grow: 1;
-      /* overflow-y: auto; Add scroll bar in y direction */
-    }
+    background-color: green;
   }
   .footer {
-    display: none;
+    min-height: 1rem;
+    background-color: yellow;
   }
 }
-.hidden {
+.body::-webkit-scrollbar {
   display: none;
-}
-@media screen and (max-width: 768px) {
-  .body {
-    .header {
-      .container {
-        padding: 5px 0.5rem;
-        font-weight: 700;
-
-        .nav {
-          display: none;
-        }
-      }
-    }
-
-    .footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 100vw;
-      width: 100vw;
-      height: 40px;
-      /* border: 2px solid var(--footer-color); */
-      position: fixed;
-      bottom: 0;
-      font-weight: 700;
-      font-size: 2rem;
-      padding: 5px;
-      background-color: var(--primary-color);
-
-      ul {
-        display: flex;
-        justify-content: space-evenly;
-        min-width: 100%;
-        align-items: center;
-        padding: 0;
-
-        li {
-          text-decoration: none;
-          /* color: var(--text-color); */
-          border-radius: 5px;
-          white-space: nowrap;
-          gap: 0px;
-          list-style: none;
-          margin: 0;
-
-          a {
-            padding: 5px;
-            text-decoration: none;
-            color: var(--text-color);
-          }
-
-          a:hover {
-            background-color: var(--primary-color);
-            box-shadow: inset;
-            /* color: var(--secondary-color); */
-          }
-        }
-        .nav-ele.nav-active a {
-          display: flex;
-          color: rgb(176, 69, 69);
-        }
-      }
-    }
-  }
 }
