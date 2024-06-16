@@ -9,28 +9,35 @@
   display: flex;
   flex-direction: column;
   .header {
-    width: 100%;
-    min-height: 3rem;
-    display: flex;
-    align-items: center;
     background-color: red;
-    justify-content: space-evenly;
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .logo-img {
-        img {
-          width: 60px;
+    display: flex;
+    width: 100%;
+    .container{
+        display: flex;
+        flex-direction: row;
+        .logo{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .logo-img{
+            img{
+              width: 50px;
+            }
+          }
+          .logo-text{
+            vertical-align: center;
+            font-family: cursive;
+            font-weight: bolder;
+            font-size: 1rem;
+          }
         }
-      }
-    }
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: space-evenly;
-      background-color: blue;
+        .nav-desktop{
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          width: 60%;
+          border: 2px solid blue;
+        }
     }
   }
   .main {
