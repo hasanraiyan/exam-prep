@@ -150,7 +150,7 @@
 
           }
           .chapter-details {
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.5s ease-in;
@@ -161,7 +161,7 @@
               border-radius: 5px;
               font-size: 1.2rem;
               margin-left: 1rem;
-              display: none;
+              /* display: none; */
               margin-top: 0.7rem;
             }
             .chapter-topics:hover {
@@ -169,7 +169,7 @@
             }
           }
           .chapter-details.chapter-active {
-              display: block;
+              display: flex;
           }
         }
       }
